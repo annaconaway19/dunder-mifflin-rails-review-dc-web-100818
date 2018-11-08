@@ -1,0 +1,16 @@
+<%= form_for @employee do |f| %>
+
+    <%= f.label :first_name %>
+    <div><%= f.text_field :first_name %></div>
+    <%= f.label :last_name %>
+    <div><%= f.text_field :last_name %></div>
+    <%= f.label :alias %>
+    <div><%= f.text_field :alias %></div>
+    <%= f.label :office %>
+    <div><%= f.text_field :office %></div>
+    <label>Dog</label>
+    <div><%= f.collection_select :dog_id, Dog.all, :id, :name %></div>
+
+  <%= f.submit %>
+
+  <%end%>

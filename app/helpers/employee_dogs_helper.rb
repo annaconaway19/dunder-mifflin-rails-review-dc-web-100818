@@ -1,0 +1,2 @@
+module EmployeeDogsHelper
+end
