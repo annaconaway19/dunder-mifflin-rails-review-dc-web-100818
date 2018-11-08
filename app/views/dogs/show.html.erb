@@ -2,4 +2,7 @@
 <p><%= @dog.name %></p>
 <p><%= @dog.age %></p>
 <p><%= @dog.breed %></p>
-<p><%= link_to @dog.employee.name, employee_path %></p>
+
+<% @dog.employee.each do |employee| %>
+<p><%= link_to employee.full_name, employee_path %></p>
+<%end%>

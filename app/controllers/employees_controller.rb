@@ -13,8 +13,13 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = Employee.create(emp_params)
-    redirect_to employee_path
+    @employee = Employee.new(emp_params)
+    if @employee.valid?
+      @employee.save
+      redirect_to @employee
+    else
+      render :new
+    end
   end
 
   def edit
@@ -22,7 +27,7 @@ class EmployeesController < ApplicationController
 
   def update
     @employee.update(emp_params)
-    redirect_to employee_path
+    redirect_to employee_path(@employee)
   end
 
 private

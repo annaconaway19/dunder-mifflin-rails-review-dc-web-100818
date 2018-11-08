@@ -8,6 +8,8 @@
     <div><%= f.text_field :alias %></div>
     <%= f.label :office %>
     <div><%= f.text_field :office %></div>
+    <%= f.label :img_url %>
+    <div><%= f.text_field :img_url %></div>
     <label>Dog</label>
     <div><%= f.collection_select :dog_id, Dog.all, :id, :name %></div>
 
