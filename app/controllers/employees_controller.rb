@@ -26,8 +26,11 @@ class EmployeesController < ApplicationController
   end
 
   def update
-    @employee.update(emp_params)
+    if @employee.update(emp_params)
     redirect_to employee_path(@employee)
+  else
+    render :edit
+  end
   end
 
 private
